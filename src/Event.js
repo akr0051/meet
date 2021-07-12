@@ -3,6 +3,7 @@ import React, { Component } from "react";
 class Event extends Component {
   state = {
     show: false,
+    showHideDetails: false,
   };
 
   handleButton = () => {
