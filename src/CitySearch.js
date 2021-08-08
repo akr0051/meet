@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { InfoAlert } from './Alert';
+import { FaSearch } from 'react-icons/fa';
+import './CitySearch.css';
 
 class CitySearch extends Component {
     state = {
@@ -44,9 +46,12 @@ class CitySearch extends Component {
         return (
           <div className="CitySearch">
           <InfoAlert text={this.state.infoText} />
+            <div className="input-box">
+            <FaSearch className="search-icon" color="white" />
             <input
               type="text"
               className="city"
+              placeholder="Search..."
               value={this.state.query}
               onChange={this.handleInputChanged}
               onFocus={() => { this.setState({ showSuggestions: true }) }}
@@ -63,6 +68,7 @@ class CitySearch extends Component {
             </li>
             </ul>
             <InfoAlert text={this.state.infoText} />
+          </div>
           </div>
         );
     }

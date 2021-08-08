@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { BiMap } from 'react-icons/bi';
+import './Event.css';
 
 class Event extends Component {
   state = {
@@ -15,11 +17,23 @@ class Event extends Component {
 
     return (
       <div className="Event">
+        <div className="event-info">
         <h1 className="EventSummary">{event.summary}</h1>
-        <h2 className="EventLocation">{event.location}</h2>
-        <h3 className="EventDate">
+        
+        <h2 className="EventDate">
           start: {event.start.dateTime} - Time Zone: {event.start.timeZone}
-        </h3>
+        </h2>
+
+        <div className="location">
+        < BiMap className="loc-icon" color="white"/>
+        
+        <h3 className="EventLocation">{event.location}</h3>
+        </div>
+        </div>
+        
+        
+        
+        
         {this.state.show === true && (
           <p className="EventDetails">{event.description}</p>
         )}

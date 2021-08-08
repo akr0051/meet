@@ -1,0 +1,20 @@
+.NumberOfEvents {
+    font-size: 15px;
+    color: #828D99;
+    float: right;
+}
+
+.event-number-input {
+    background-color: transparent;
+    color: #BEC2CC;
+    font-size: 15px;
+    border: 1px solid grey;
+    width: 141px;
+    height: 36px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.event-label {
+    padding: 20px;
+}

@@ -1,0 +1,47 @@
+.showMore {
+    font-size: 15px;
+    color: #BEC2CC;
+    border-radius: 4px;
+    background-color: transparent;
+    border: 1px solid grey;
+    width: 433px;
+    height: 36px;
+    margin-bottom: 34px;
+}
+
+.event-info {
+    border-bottom: 1px solid grey;
+    width: 433px;
+    margin-bottom: 30px;
+    color: #828D99;
+    font-size: 13px;
+}
+
+.Event {
+    width: 505px;
+    height: 219px;
+    border-radius: 4px;
+    margin: 34px 36px;
+}
+
+.EventSummary {
+    color: #FFFFFF;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.location {
+    display: inline-flex;
+    align-items: center !important;
+}
+
+.loc-icon {
+    padding: 5px;
+    font-size: 20px;
+}
+
+.EventDate {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+

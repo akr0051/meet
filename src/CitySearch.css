@@ -1,0 +1,17 @@
+.input-box {
+    border-radius: 4px;
+    border: 1px solid grey;
+    align-items: center !important;
+    display: inline-flex;
+    flex-grow: 1;
+    height: 48px;
+}
+
+.city {
+    color: #828D99;
+    background-color: transparent;
+}
+
+.search-icon {
+    padding: 10px;
+}
