@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import './App.css';
+import {
+  ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
+} from 'recharts';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import EventGenre from './EventGenre';
 import { getEvents, extractLocations } from './api';
-import {
-  ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
-} from 'recharts';
+import './App.css';
 import './nprogress.css';
 
 class App extends Component {
@@ -15,31 +15,32 @@ class App extends Component {
     events: [],
     locations: [],
     numberOfEvents: 10,
-    warningText: ''
+    warningText: '',
   }
 
   componentDidMount() {
     this.mounted = true;
     getEvents().then((events) => {
       if (this.mounted) {
-        this.setState({ 
+        this.setState({
           events: events.slice(0, this.state.numberOfEvents),
-          locations: extractLocations(events) });
+          locations: extractLocations(events), 
+        });
       }
     });
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     this.mounted = false;
   }
 
   getData = () => {
     const { locations, events } = this.state;
     const data = locations.map((location) => {
-      const number = events.filter((event) => event.location === location).length
-      const city = location.split(', ').shift()
+      const number = events.filter((event) => event.location === location).length;
+      const city = location.split(', ').shift();
       return { city, number };
-    })
+    });
     return data;
   }
 
@@ -69,10 +70,11 @@ class App extends Component {
     return (
       <div className="App">
         
-        <header className="header">meet</header>
-        
+        <div className="title">meet</div>
+
+        <h1 className="subtitle">Choose your nearest city</h1>
+
         <div className="top">
-        <h1 className="title">Choose your nearest city</h1>
         
         <CitySearch updateEvents={this.updateEvents} locations={locations}/>
         
@@ -80,7 +82,10 @@ class App extends Component {
           updateEvents={this.updateEvents}
           numberOfEvents={numberOfEvents}
         />      
-        </div>
+
+</div>
+    
+        <div className="meet-data">
   
          <div className="data-vis-wrapper">
 
@@ -92,21 +97,22 @@ class App extends Component {
 
               <div className="scatter-title">Cities</div>
 
-            <ResponsiveContainer height={508}>
+            <ResponsiveContainer height={284}>
               
             
               <ScatterChart
               
               
                 margin={{
-                  top: 20, right: 20, bottom: 20, left: 20,
+                  top: 5, right: 42, bottom: -15, left: 10,
                 }}
               >
-                <CartesianGrid />
-                <XAxis type="category" dataKey="city" name="city" />
-                <YAxis type="number" dataKey="number" name="number of events" />
+                <CartesianGrid vertical={false} />
+                <XAxis type="category" dataKey="none" name="city" />
+                <YAxis type="number" dataKey="number" name="number of events" stroke="#828D99" axisLine={false} />
                 <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-                <Scatter data={this.getData()} fill="#8884d8" />
+                <Scatter data={this.getData()} fill="#FFFFFF" />
+                
                 
               </ScatterChart>
             </ResponsiveContainer>
@@ -115,7 +121,9 @@ class App extends Component {
         <div className="event-list">
           <EventList events={this.state.events} />
           </div>
+          </div>
       </div>
+      
     );
   }
 }

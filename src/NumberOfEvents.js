@@ -4,7 +4,7 @@ import './NumberOfEvents.css';
 
 class NumberOfEvents extends Component {
   state = {
-    numberOfEvents: 32,
+    numberOfEvents: 16,
     errorText: '',
   }
 

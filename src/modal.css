@@ -1,0 +1,43 @@
+
+.modal-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: 99;
+    background-color: #1E2127;
+    border-radius: 4px;
+}
+
+.modal-title {
+    font-size: 32px;
+    font-weight: 500px;
+}
+
+.modal-info {
+    color: #828D99;
+    font-size: 13px;
+}
+
+.modal-desc {
+    color: #BEC2CC;
+    font-size: 15px;
+}
+
+.modal-btn {
+    background-color: #0093FF;
+    border-radius: 4px;
+    width: 318px;
+    height: 48px;
+    border: transparent;
+}
+
+.modal-close-btn {
+    height: 22px;
+    width: 22px;
+    border: transparent;
+
+}

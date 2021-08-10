@@ -1,15 +1,7 @@
-.header {
-  background-color: #1E2127;
-  color: #0376E3 !important;
-  font-size: 20px;
-  height: 56px;
-  padding-left: 31px;
-  margin-top: 14px;
-}
-
-.title {
+.subtitle {
   font-size: 38px;
   text-align: center;
+  margin-bottom: 16px;
 }
 
 .scatter-title {
@@ -18,22 +10,37 @@
 }
 
 .scatter-container {
-  background-color: red;
+  background-color: #1E2127;
   width: 493px;
   height: 508px;
-}
-
-.event-list {
-  width: 600px;
-  list-style-type: none !important;
+  border-radius: 4px;
+  margin-right: 35px;
 }
 
 .pie {
-  background-color: red !important;
+  background-color: #1E2127;
   width: 493px;
-  margin: 38px 35px;
+  margin-right: 35px;
+  margin-bottom: 38px;
+  border-radius: 4px;
 }
 
 .data-vis-wrapper {
-  width: 493px !important;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
+
+.title {
+  margin-top: 14px;
+  margin-bottom: 86px;
+  margin-left: 31px;
+  color: #0376E3;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.meet-data {
+  display: flex;
+  margin-left: 156px;
+}  
