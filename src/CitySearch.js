@@ -20,7 +20,7 @@ class CitySearch extends Component {
         if (suggestions.length === 0) {
           this.setState({
             query: value,
-            infoText: 'We can not find the city you are looking for. Please try another city',
+            infoText: 'Please try another city.',
             suggestions: [],
           });
         } else {
@@ -45,7 +45,6 @@ class CitySearch extends Component {
     render() {
         return (
           <div className="CitySearch">
-          <InfoAlert text={this.state.infoText} />
             <div className="input-box">
             <FaSearch className="search-icon" color="white" />
             <input
@@ -58,16 +57,16 @@ class CitySearch extends Component {
             />
             <ul className="suggestions" style={this.state.showSuggestions ? {}: { display: 'none' }}>
             {this.state.suggestions.map((suggestion) => (
-                <li
+                <li className="sug-list"
                 key={suggestion}
                 onClick={() => this.handleItemClicked(suggestion)}
                 >{suggestion}</li>
             ))}
-            <li onClick={() => this.handleItemClicked("all")}>
-            <b>See all cities</b>
+            <li className="city-list" onClick={() => this.handleItemClicked("all")}>
+            <b className="city-main">See all cities</b>
             </li>
             </ul>
-            <InfoAlert text={this.state.infoText} />
+            <InfoAlert className="alert" text={this.state.infoText} />
           </div>
           </div>
         );

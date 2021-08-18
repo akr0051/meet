@@ -48,10 +48,7 @@ onClose = (e) => {
         <h3 className="EventLocation">{event.location}</h3>
         </div>
         </div>
-     
-        
-      
-  
+    
         {this.state.show === true && (
           <p className="EventDetails">{event.description}</p>
         )}
@@ -62,7 +59,7 @@ onClose = (e) => {
             Show details
           </button>
           
-          <Modal open={this.state.open} onClose={this.openModal} />
+          {/* <Modal event={event} open={this.state.open} onClose={this.openModal} /> */}
           </div>
         )}
         

@@ -25,3 +25,30 @@
     max-width: 60%;
     margin: 0 auto;
 }
+
+.city-main {
+    color: #828D99;
+    font-size: 12px;
+    font-weight: 400px;
+}
+
+.city-main {
+    font-weight: 400px;
+}
+
+.alert {
+    font-size: 15px;
+    font-weight: 400px;
+}
+
+.suggestions {
+    border-radius: 4px;
+    border: 1px solid grey;
+    background-color: #1B1D24;
+    font-size: 12px;
+    color: #828D99;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+}

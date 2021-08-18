@@ -35,10 +35,10 @@ const extractLocations = (events) => {
 const getEvents = async () => {
   NProgress.start();
 
-  if (window.location.href.startsWith("http://localhost")) {
-    NProgress.done();
-    return mockData;
-  }
+  // if (window.location.href.startsWith("http://localhost")) {
+  //   NProgress.done();
+  //   return mockData;
+  // }
 
   if (!navigator.onLine) {
     const events = localStorage.getItem('lastEvents');

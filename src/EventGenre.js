@@ -4,10 +4,13 @@ import './EventGenre.css';
 
 const EventGenre = ({ events }) => {
     
-    const [data, setData] = useState([]);
+    const [ data, setData ] = useState([]);
+    const [ total, setTotal ] = useState(0);
 
     useEffect(() => { 
-        setData(() => getData()); 
+        const data = getData();
+        setData(data);
+        setTotal(data.reduce((total, { value }) => total +value, 0))
       // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [events]);
 
@@ -30,32 +33,28 @@ return (
     <div className="pie-container">
         <div className="pie-title">Technologies</div>
     <ResponsiveContainer height={508}>
-        <PieChart width={400} height={400} >
+        <PieChart width={400} height={300} >
             <Pie
                 data={data}
-                cy="20%"
+                cy={40}
                 labelLine={false}
-                outerRadius={95}
-                innerRadius={90}
+                outerRadius={80}
+                innerRadius={75}
                 fill="#8884d8"
                 dataKey="value"
-                // label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
             >
                 {data.map((entry, index) => (
           <Cell key={`cell-${index}`} fill={colors[index]} name={entry.name} />))}
                 </Pie>
                 <Legend 
                     layout="vertical" 
-                    iconType="circle" 
-                    iconSize="8" 
-                    wrapperStyle={{bottom:40, left:48}}
-                    payload={
-                        data.map(entry => ({ 
-                            value: `${entry.name} `,
-                            type: "circle",
-                            color: data.fill,
-                            id: entry.name,
-                        }))}
+                    content={
+                        <ul>
+                            {data.map(
+                                (entry, index) => <li style={{color: colors[index]}}>{entry.name} {(entry.value*100) /total}%</li>
+                            )}
+                        </ul>
+                    }
                     
                 />
         </PieChart>

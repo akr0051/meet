@@ -42,5 +42,21 @@
 
 .meet-data {
   display: flex;
-  margin-left: 156px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  justify-content: center;
 }  
+
+.top {
+  width: 60%;
+  margin: 0 auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+}
+
+.event-list {
+  display: flex;
+  justify-content: center;
+}

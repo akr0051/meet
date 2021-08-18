@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { BiMap } from 'react-icons/bi';
 
 class ModalInfo extends Component {
     state = {
@@ -19,13 +20,13 @@ return (
         start: {event.start.dateTime} - Time Zone: {event.start.timeZone}
       </h2>
 
-      {/* <div className="location">
-      < BiMap className="loc-icon" color="white"/> */}
+      <div className="location">
+      < BiMap className="loc-icon" color="white"/>
       
       <h3 className="EventLocation">{event.location}</h3>
       </div>
       </div>
-    //   </div>
+      </div>
 )
 }}
 

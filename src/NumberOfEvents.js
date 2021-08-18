@@ -33,13 +33,15 @@ class NumberOfEvents extends Component {
     return (
       <div className="NumberOfEvents">
         <label className="event-label" htmlFor='numberOfEvent'>Number of events</label>
+        <div className="number-input-box">
         <input
           type="number"
           className="event-number-input"
-          placeholder='Enter Number of Events'
+          placeholder='Enter Number'
           value={this.state.numberOfEvents}
           onChange={this.handleInputChanged}
         />
+        </div>
         <ErrorAlert text={this.state.errorText} />
       </div>
     );
