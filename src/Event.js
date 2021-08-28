@@ -7,7 +7,7 @@ class Event extends Component {
   state = {
     show: false,
     showHideDetails: false,
-    open: true,
+    open: false,
   };
 
   handleButton = () => {
@@ -15,59 +15,43 @@ class Event extends Component {
   };
 
 
-  openModal = (e) => {
+  toggleModal = (e) => {
     e.preventDefault();
     this.setState({
         open: !this.state.open
     });
 };
 
-onClose = (e) => {
-  this.props.onClose && this.props.onClose(e);
-};
-
-
   render() {
-    let event = this.props.event;
-    if (this.props.open) {
-      return null;
-    }   
+    let { event } = this.props;
+    const { open } = this.state; 
 
     return (
       <div className="event">
         <div className="event-info">
-        <h1 className="EventSummary">{event.summary}</h1>
+        <div className="EventSummary">{event.summary}</div>
         
-        <h2 className="EventDate">
+        <div className="EventDate">
           start: {event.start.dateTime} - Time Zone: {event.start.timeZone}
-        </h2>
+        </div>
 
         <div className="location">
         < BiMap className="loc-icon" color="white"/>
         
-        <h3 className="EventLocation">{event.location}</h3>
+        <div className="EventLocation">{event.location}</div>
         </div>
         </div>
-    
-        {this.state.show === true && (
-          <p className="EventDetails">{event.description}</p>
-        )}
         
         {this.state.show === false && (
          <div>
-         <button className="showMore" onClick={(e) => this.openModal(e)}>
+         <button className="showMore" onClick={(e) => this.toggleModal(e)}>
             Show details
           </button>
           
-          {/* <Modal event={event} open={this.state.open} onClose={this.openModal} /> */}
+          {open && <Modal event={event} onClose={(e) => this.toggleModal(e)} />}
           </div>
         )}
         
-        {this.state.show === true && (
-          <button className="showLess" onClick={() => this.handleButton()}>
-            hide details
-          </button>
-        )}
       </div>
     );
   }

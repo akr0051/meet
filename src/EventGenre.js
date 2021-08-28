@@ -34,9 +34,9 @@ return (
         <div className="pie-title">Technologies</div>
     <ResponsiveContainer height={508}>
         <PieChart width={400} height={300} >
+            
             <Pie
                 data={data}
-                cy={40}
                 labelLine={false}
                 outerRadius={80}
                 innerRadius={75}
@@ -48,10 +48,10 @@ return (
                 </Pie>
                 <Legend 
                     layout="vertical" 
-                    content={
+                    content={() =>
                         <ul>
                             {data.map(
-                                (entry, index) => <li style={{color: colors[index]}}>{entry.name} {(entry.value*100) /total}%</li>
+                                (entry, index) => <li key={entry.name} style={{color: colors[index]}}>{entry.name} {parseInt((entry.value*100) /total)}%</li>
                             )}
                         </ul>
                     }

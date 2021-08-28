@@ -1,13 +1,13 @@
 
 .modal-container {
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    z-index: 99;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 400px;
+    max-width: 600;
+    width: 60%;
+    overflow: visible;
     background-color: #1E2127;
     border-radius: 4px;
 }
@@ -38,6 +38,11 @@
 .modal-close-btn {
     height: 22px;
     width: 22px;
-    border: transparent;
-
+    background-color: transparent;
+    position: absolute;
+    right: 17px;
+    top: 24px;
+    border: none;
+    outline: none;
+    color: #F5F5F5;
 }

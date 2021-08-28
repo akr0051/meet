@@ -13,16 +13,13 @@ class Modal extends Component {
     };
 
     render() {
-        let { event, open } = this.props.event;
-        if (open) {
-            return null;
-        }
+        let { event } = this.props;
 
         return (
             <section className="modal-container" id="modal">
                 <div className="modal-content">
                     <ModalInfo event={event} />
-                    <button onClick={this.onClose}>Close Modal</button>
+                    <button className="modal-close-btn" onClick={this.onClose}>X</button>
                 </div>
             </section>
         );

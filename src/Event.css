@@ -64,3 +64,18 @@
     margin: 32px;
     padding: 32px;
 }
+
+.EventDetails {
+    color: #BEC2CC;
+    font-size: 15px;
+    font-family: Archivo;
+    text-align: left;
+    width: 425px;
+    margin: 0 auto;
+}
+
+.EventSummary-modal {
+    color: #FFFFFF;
+    font-size: 32px;
+    margin-bottom: 5px;
+}

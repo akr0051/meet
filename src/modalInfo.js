@@ -8,24 +8,30 @@ class ModalInfo extends Component {
     };
 
 render() {
-    let event = this.props.event;
+    let { event } = this.props;
 
 
 return (
     <div className="event">
       <div className="event-info">
-      <h1 className="EventSummary">{event.summary}</h1>
+      <div className="EventSummary-modal">{event.summary}</div>
       
-      <h2 className="EventDate">
+      <div className="EventDate">
         start: {event.start.dateTime} - Time Zone: {event.start.timeZone}
-      </h2>
+      </div>
 
       <div className="location">
       < BiMap className="loc-icon" color="white"/>
       
-      <h3 className="EventLocation">{event.location}</h3>
+      <div className="EventLocation">{event.location}</div>
+
+      
+
       </div>
+      
+
       </div>
+      <div className="EventDetails">{event.description}</div>
       </div>
 )
 }}

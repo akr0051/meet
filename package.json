@@ -10,6 +10,7 @@
     "atatus-spa": "^4.3.2",
     "axios": "^0.21.1",
     "nprogress": "^0.2.0",
+    "numbro": "^2.3.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
