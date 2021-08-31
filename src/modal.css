@@ -7,7 +7,7 @@
     height: 400px;
     max-width: 600;
     width: 60%;
-    overflow: visible;
+    overflow: auto;
     background-color: #1E2127;
     border-radius: 4px;
 }
