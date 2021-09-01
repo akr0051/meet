@@ -14,7 +14,7 @@ class App extends Component {
   state = {
     events: [],
     locations: [],
-    numberOfEvents: 10,
+    numberOfEvents: 16,
     warningText: '',
   }
 
@@ -55,6 +55,12 @@ class App extends Component {
     });
   }
 
+  updateEventCount =(x) => {
+    this.setState({
+      numberOfEvents: x
+    });
+  }
+
   getData = () => {
     const {locations, events} = this.state;
     const data = locations.map((location)=>{
@@ -79,7 +85,7 @@ class App extends Component {
         <CitySearch updateEvents={this.updateEvents} locations={locations}/>
         
         <NumberOfEvents
-          updateEvents={this.updateEvents}
+          updateEvents={this.updateEventCount}
           numberOfEvents={numberOfEvents}
         />      
 
@@ -119,7 +125,7 @@ class App extends Component {
             </div>
         </div>
         <div className="event-list">
-          <EventList events={this.state.events} />
+          <EventList events={this.state.events.slice(0, numberOfEvents)} />
           </div>
           </div>
       </div>
